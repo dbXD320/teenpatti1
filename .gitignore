@@ -1,0 +1,7 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Large solver artifacts (regenerate with run_main_solve.py)
+# GitHub rejects any single file over 100 MB
+*.pkl

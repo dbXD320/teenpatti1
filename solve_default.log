@@ -1,0 +1,37 @@
+Solving RULES.md default config: boot=1 stack=50 k<=8 r<=2
+  tables+tree built in 1.1s: 5,929 nodes, 1,755 private classes
+  regret+strategy tables: 112 MB
+  running 1000 iterations, logging every 50
+iter=    50  expl=9.340e-02 boots/hand  (  93.4004 mb/hand,  4.6700% of pot)  v0=-0.012970   [current iterate: 1.487e-01]
+iter=   100  expl=4.415e-02 boots/hand  (  44.1468 mb/hand,  2.2073% of pot)  v0=-0.021181   [current iterate: 7.054e-02]
+iter=   150  expl=1.998e-02 boots/hand  (  19.9770 mb/hand,  0.9989% of pot)  v0=-0.032168   [current iterate: 1.991e-02]
+iter=   200  expl=1.130e-02 boots/hand  (  11.3028 mb/hand,  0.5651% of pot)  v0=-0.035671   [current iterate: 4.182e-03]
+iter=   250  expl=7.269e-03 boots/hand  (   7.2693 mb/hand,  0.3635% of pot)  v0=-0.037233   [current iterate: 2.298e-03]
+iter=   300  expl=5.086e-03 boots/hand  (   5.0855 mb/hand,  0.2543% of pot)  v0=-0.038060   [current iterate: 1.533e-03]
+iter=   350  expl=3.775e-03 boots/hand  (   3.7754 mb/hand,  0.1888% of pot)  v0=-0.038556   [current iterate: 1.295e-03]
+iter=   400  expl=2.922e-03 boots/hand  (   2.9215 mb/hand,  0.1461% of pot)  v0=-0.038876   [current iterate: 1.156e-03]
+iter=   450  expl=2.338e-03 boots/hand  (   2.3381 mb/hand,  0.1169% of pot)  v0=-0.039095   [current iterate: 9.861e-04]
+iter=   500  expl=1.927e-03 boots/hand  (   1.9269 mb/hand,  0.0963% of pot)  v0=-0.039251   [current iterate: 7.040e-04]
+iter=   550  expl=1.624e-03 boots/hand  (   1.6239 mb/hand,  0.0812% of pot)  v0=-0.039367   [current iterate: 6.755e-04]
+iter=   600  expl=1.397e-03 boots/hand  (   1.3965 mb/hand,  0.0698% of pot)  v0=-0.039457   [current iterate: 6.264e-04]
+iter=   650  expl=1.220e-03 boots/hand  (   1.2201 mb/hand,  0.0610% of pot)  v0=-0.039528   [current iterate: 5.593e-04]
+iter=   700  expl=1.079e-03 boots/hand  (   1.0795 mb/hand,  0.0540% of pot)  v0=-0.039586   [current iterate: 4.988e-04]
+iter=   750  expl=9.638e-04 boots/hand  (   0.9638 mb/hand,  0.0482% of pot)  v0=-0.039633   [current iterate: 4.344e-04]
+iter=   800  expl=8.694e-04 boots/hand  (   0.8694 mb/hand,  0.0435% of pot)  v0=-0.039673   [current iterate: 4.292e-04]
+iter=   850  expl=7.895e-04 boots/hand  (   0.7895 mb/hand,  0.0395% of pot)  v0=-0.039706   [current iterate: 3.856e-04]
+iter=   900  expl=7.205e-04 boots/hand  (   0.7205 mb/hand,  0.0360% of pot)  v0=-0.039735   [current iterate: 3.685e-04]
+iter=   950  expl=6.625e-04 boots/hand  (   0.6625 mb/hand,  0.0331% of pot)  v0=-0.039760   [current iterate: 3.313e-04]
+iter=  1000  expl=6.127e-04 boots/hand  (   0.6127 mb/hand,  0.0306% of pot)  v0=-0.039781   [current iterate: 3.241e-04]
+
+DONE in 54.9 min
+  final exploitability : 6.1274e-04 boots/hand
+                        0.6127 mb/hand
+                        0.03064% of the pot
+  game value to seat 1 : -0.039781
+  monotone decreasing  : True
+  plateau ratio (last 3 logs): 0.7761
+  iters to < 1e-02: 250
+  iters to < 1e-03: 750
+  iters to < 1e-04: None
+  iters to < 1e-05: None
+  checkpoint -> solution_default.pkl

@@ -1,0 +1,387 @@
+{
+ "default": {
+  "blind": {
+   "config_label": "boot=1 stack=50 k<=8 r<=2",
+   "iterations": 1000,
+   "exploitability": 0.0006127377654912732,
+   "game_value_p0": -0.0397812406966187,
+   "p1_stay_blind_first": 0.9999646176386227,
+   "p2_stay_blind_first": 0.00517564690598874,
+   "convert_marginal": {
+    "0": {
+     "1": 3.538236137731404e-05,
+     "2": 0.46274822064813736,
+     "3": 0.007328111108537624,
+     "4": 0.10996660528551248
+    },
+    "1": {
+     "1": 0.9948108312825482,
+     "2": 2.1508922545484587e-05,
+     "3": 3.0630194077382276e-07,
+     "4": 1.3274307448185452e-08
+    }
+   },
+   "convert_conditional": {
+    "0": {
+     "1": 3.538236137731413e-05,
+     "2": 0.7862174304717419,
+     "3": 0.058415307208410296,
+     "4": 0.9310060334679169
+    },
+    "1": {
+     "1": 0.9948243530940112,
+     "2": 0.0578357268510432,
+     "3": 0.2182104568925418,
+     "4": 0.13804156061060122
+    }
+   },
+   "reach_blind": {
+    "0": {
+     "1": 0.9999999999999976,
+     "2": 0.5885753771326104,
+     "3": 0.12544847333238993,
+     "4": 0.11811588897646173
+    },
+    "1": {
+     "1": 0.9999864078403178,
+     "2": 0.0003718968138998434,
+     "3": 1.4036996445347338e-06,
+     "4": 9.61616732632478e-08
+    }
+   },
+   "never_convert": {
+    "0": 0.4199216805964352,
+    "1": 0.005167340218658056
+   },
+   "expected_blind_bets": {
+    "0": 1.252057890383214,
+    "1": 0.005515538081738195
+   },
+   "blind_show_prob": {
+    "0": 1.1285016976240674e-05,
+    "1": 0.005141991822829585
+   },
+   "seen_show_prob": {
+    "0": 0.10276448221704802,
+    "1": 0.07601212894508767
+   },
+   "blind_pack_prob": {
+    "0": 3.529654680672541e-06,
+    "1": 1.160665245528308e-05
+   }
+  },
+  "dominance": {
+   "config_label": "boot=1 stack=50 k<=8 r<=2",
+   "threshold": 0.5,
+   "groups": {
+    "look (see / stay-blind)": {
+     "n_infosets": 251,
+     "unweighted_dominant": 0.9203187250996016,
+     "reach_weighted_dominant": 0.9999999720204039,
+     "reach_mass": 2.8324995439427227
+    },
+    "bet, actor blind": {
+     "n_infosets": 235,
+     "unweighted_dominant": 0.8382978723404255,
+     "reach_weighted_dominant": 0.9999993675279987,
+     "reach_mass": 1.2575885647551537
+    },
+    "bet, actor seen": {
+     "n_infosets": 913825,
+     "unweighted_dominant": 0.7962607720296556,
+     "reach_weighted_dominant": 0.9799839306594675,
+     "reach_mass": 2.0983366682375797
+    }
+   },
+   "overall_unweighted": 0.7963056334223256,
+   "overall_weighted": 0.9932129211541013
+  },
+  "exploitability": 0.0006127377654912732,
+  "game_value_p0": -0.0397812406966187,
+  "iterations": 1000
+ },
+ "stack_sweep": [
+  {
+   "stack": 34,
+   "status": "ok",
+   "n_nodes": 5929,
+   "game_value_p0": -0.014049237479203846,
+   "exploitability": 0.113014565764114,
+   "p1_stay_blind_first": 0.9790705501610946,
+   "tree_identical": true,
+   "values_identical": true
+  },
+  {
+   "stack": 40,
+   "status": "ok",
+   "n_nodes": 5929,
+   "game_value_p0": -0.014049237479203846,
+   "exploitability": 0.113014565764114,
+   "p1_stay_blind_first": 0.9790705501610946,
+   "tree_identical": true,
+   "values_identical": true
+  },
+  {
+   "stack": 50,
+   "status": "ok",
+   "n_nodes": 5929,
+   "game_value_p0": -0.014049237479203846,
+   "exploitability": 0.113014565764114,
+   "p1_stay_blind_first": 0.9790705501610946,
+   "tree_identical": true,
+   "values_identical": true
+  },
+  {
+   "stack": 75,
+   "status": "ok",
+   "n_nodes": 5929,
+   "game_value_p0": -0.014049237479203846,
+   "exploitability": 0.113014565764114,
+   "p1_stay_blind_first": 0.9790705501610946,
+   "tree_identical": true,
+   "values_identical": true
+  },
+  {
+   "stack": 100,
+   "status": "ok",
+   "n_nodes": 5929,
+   "game_value_p0": -0.014049237479203846,
+   "exploitability": 0.113014565764114,
+   "p1_stay_blind_first": 0.9790705501610946,
+   "tree_identical": true,
+   "values_identical": true
+  }
+ ],
+ "boot_sweep": [
+  {
+   "boot": 1,
+   "fixed_stack": {
+    "status": "ok",
+    "game_value_p0": -0.014049237479203846,
+    "exploitability": 0.113014565764114,
+    "p1_stay_blind_first": 0.9790705501610946
+   },
+   "scaled_stack": {
+    "status": "ok",
+    "game_value_p0": -0.014049237479203846,
+    "game_value_per_boot": -0.014049237479203846,
+    "p1_stay_blind_first": 0.9790705501610946,
+    "strategy_matches_boot_1": true
+   }
+  },
+  {
+   "boot": 2,
+   "fixed_stack": {
+    "status": "outside RULES.md: exposure exceeds the stack and E1 specifies no all-in rule"
+   },
+   "scaled_stack": {
+    "status": "ok",
+    "game_value_p0": -0.028098474958407692,
+    "game_value_per_boot": -0.014049237479203846,
+    "p1_stay_blind_first": 0.9790705501610946,
+    "strategy_matches_boot_1": true
+   }
+  },
+  {
+   "boot": 3,
+   "fixed_stack": {
+    "status": "outside RULES.md: exposure exceeds the stack and E1 specifies no all-in rule"
+   },
+   "scaled_stack": {
+    "status": "ok",
+    "game_value_p0": -0.04214771243768942,
+    "game_value_per_boot": -0.014049237479229808,
+    "p1_stay_blind_first": 0.9790705501610943,
+    "strategy_matches_boot_1": true
+   }
+  },
+  {
+   "boot": 5,
+   "fixed_stack": {
+    "status": "outside RULES.md: exposure exceeds the stack and E1 specifies no all-in rule"
+   },
+   "scaled_stack": {
+    "status": "ok",
+    "game_value_p0": -0.07024618739614051,
+    "game_value_per_boot": -0.014049237479228103,
+    "p1_stay_blind_first": 0.9790705501610943,
+    "strategy_matches_boot_1": true
+   }
+  }
+ ],
+ "cap_sweep": [
+  {
+   "action_cap": 2,
+   "raise_cap": 2,
+   "iterations": 3000,
+   "seconds": 218.80277800559998,
+   "n_nodes": 48,
+   "exploitability": 6.905554150890867e-06,
+   "game_value_p0": -1.05357186865205e-05,
+   "p1_stay_blind_first": 0.9999962370517205,
+   "p2_stay_blind_first": 0.9994133571445178,
+   "convert_conditional_p0": {
+    "1": 3.762948279560748e-06
+   },
+   "convert_conditional_p1": {
+    "1": 0.0005866428554821922
+   },
+   "never_convert": {
+    "0": 0.9999962370517205,
+    "1": 0.9994133579160188
+   },
+   "expected_blind_bets": {
+    "0": 0.9999962092831964,
+    "1": 0.9994120058687388
+   },
+   "blind_show_prob": {
+    "0": 2.776852160390974e-08,
+    "1": 0.0006435672648701559
+   },
+   "look_dominant_weighted": 1.0,
+   "overall_dominant_weighted": 0.9999997278724405
+  },
+  {
+   "action_cap": 4,
+   "raise_cap": 2,
+   "iterations": 1500,
+   "seconds": 343.3344702720642,
+   "n_nodes": 399,
+   "exploitability": 8.417281625237698e-05,
+   "game_value_p0": 0.00013089103502909405,
+   "p1_stay_blind_first": 0.9999794298892472,
+   "p2_stay_blind_first": 0.999934885795726,
+   "convert_conditional_p0": {
+    "1": 2.0570110752792918e-05,
+    "2": 2.23149278510996e-05
+   },
+   "convert_conditional_p1": {
+    "1": 6.511420427389522e-05,
+    "2": 1.8287885042486526e-07
+   },
+   "never_convert": {
+    "0": 0.9999585195866242,
+    "1": 0.9999347149819081
+   },
+   "expected_blind_bets": {
+    "0": 1.9370124336340064,
+    "1": 1.9369524710275772
+   },
+   "blind_show_prob": {
+    "0": 1.2797539851769356e-07,
+    "1": 0.06307531492074249
+   },
+   "look_dominant_weighted": 0.999999971338459,
+   "overall_dominant_weighted": 0.9999985478616268
+  },
+  {
+   "action_cap": 6,
+   "raise_cap": 2,
+   "iterations": 600,
+   "seconds": 317.025826215744,
+   "n_nodes": 1832,
+   "exploitability": 0.0014015778769741593,
+   "game_value_p0": -0.01189676421774052,
+   "p1_stay_blind_first": 0.999892851688738,
+   "p2_stay_blind_first": 0.04639111566324731,
+   "convert_conditional_p0": {
+    "1": 0.00010714831126205404,
+    "2": 0.42335909041775754,
+    "3": 0.9680842001545493
+   },
+   "convert_conditional_p1": {
+    "1": 0.9536088843367526,
+    "2": 0.09158776348028058,
+    "3": 0.04365052887606385
+   },
+   "never_convert": {
+    "0": 0.4820609077705359,
+    "1": 0.04641120719684444
+   },
+   "expected_blind_bets": {
+    "0": 1.3139256743315053,
+    "1": 0.04658099834466996
+   },
+   "blind_show_prob": {
+    "0": 1.841122307000088e-05,
+    "1": 0.04634475855755608
+   },
+   "look_dominant_weighted": 0.9999996727926884,
+   "overall_dominant_weighted": 0.9904540178542343
+  },
+  {
+   "action_cap": 8,
+   "raise_cap": 0,
+   "iterations": 1500,
+   "seconds": 305.9720935821533,
+   "n_nodes": 311,
+   "exploitability": 9.330897432260205e-05,
+   "game_value_p0": -0.05287685762857804,
+   "p1_stay_blind_first": 0.9999872622161075,
+   "p2_stay_blind_first": 0.0001681871881047241,
+   "convert_conditional_p0": {
+    "1": 1.2737783892492083e-05,
+    "2": 0.8145170052845231,
+    "3": 0.00034718840077910875,
+    "4": 0.7714231725700424
+   },
+   "convert_conditional_p1": {
+    "1": 0.9998318128118954,
+    "2": 0.009130886304366193,
+    "3": 0.007871013873164327,
+    "4": 0.008520445135172217
+   },
+   "never_convert": {
+    "0": 0.40254662232882854,
+    "1": 0.0001727545354771598
+   },
+   "expected_blind_bets": {
+    "0": 1.2576370445451779,
+    "1": 0.00018340474634545353
+   },
+   "blind_show_prob": {
+    "0": 4.442321089113149e-06,
+    "1": 0.0001677437482333987
+   },
+   "look_dominant_weighted": 1.0,
+   "overall_dominant_weighted": 0.9990440896086364
+  },
+  {
+   "action_cap": 8,
+   "raise_cap": 1,
+   "iterations": 600,
+   "seconds": 329.8956763744354,
+   "n_nodes": 1925,
+   "exploitability": 0.0009597303731582914,
+   "game_value_p0": -0.03913921405478433,
+   "p1_stay_blind_first": 0.9999208433560748,
+   "p2_stay_blind_first": 0.008902435580936244,
+   "convert_conditional_p0": {
+    "1": 7.915664392519042e-05,
+    "2": 0.7918777962346875,
+    "3": 0.03590038499506708,
+    "4": 0.9102748720572198
+   },
+   "convert_conditional_p1": {
+    "1": 0.9910975644190638,
+    "2": 0.00910564794817619,
+    "3": 0.14860684791264808,
+    "4": 0.11129985581626287
+   },
+   "never_convert": {
+    "0": 0.4246160082613015,
+    "1": 0.008919738398799004
+   },
+   "expected_blind_bets": {
+    "0": 1.2490868367496828,
+    "1": 0.010156498378175147
+   },
+   "blind_show_prob": {
+    "0": 2.9045088396831088e-05,
+    "1": 0.00887786750937387
+   },
+   "look_dominant_weighted": 0.999999678802817,
+   "overall_dominant_weighted": 0.9946550507674345
+  }
+ ]
+}

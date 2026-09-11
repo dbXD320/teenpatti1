@@ -1,0 +1,268 @@
+{
+ "config": "boot=1 stack=50 k<=8 r<=2",
+ "seconds": 3293.86088681221,
+ "average": [
+  {
+   "iterations": 50,
+   "exploitability": 0.09340036592261129,
+   "milliboots_per_hand": 93.40036592261129,
+   "pct_of_initial_pot": 4.670018296130564,
+   "game_value_p0": -0.012970055462636385,
+   "br_p0": 0.03404075518333232,
+   "br_p1": 0.15275997666189026
+  },
+  {
+   "iterations": 100,
+   "exploitability": 0.04414682243667086,
+   "milliboots_per_hand": 44.14682243667086,
+   "pct_of_initial_pot": 2.2073411218335433,
+   "game_value_p0": -0.021180624896448553,
+   "br_p0": 0.003824060657240791,
+   "br_p1": 0.08446958421610093
+  },
+  {
+   "iterations": 150,
+   "exploitability": 0.019977008557857254,
+   "milliboots_per_hand": 19.977008557857253,
+   "pct_of_initial_pot": 0.9988504278928627,
+   "game_value_p0": -0.03216833683236482,
+   "br_p0": -0.020822042565967133,
+   "br_p1": 0.06077605968168164
+  },
+  {
+   "iterations": 200,
+   "exploitability": 0.011302755716474738,
+   "milliboots_per_hand": 11.302755716474739,
+   "pct_of_initial_pot": 0.565137785823737,
+   "game_value_p0": -0.03567137788567708,
+   "br_p0": -0.02900319122993606,
+   "br_p1": 0.05160870266288554
+  },
+  {
+   "iterations": 250,
+   "exploitability": 0.00726933278295331,
+   "milliboots_per_hand": 7.26933278295331,
+   "pct_of_initial_pot": 0.36346663914766547,
+   "game_value_p0": -0.03723282679554307,
+   "br_p0": -0.03284551865717273,
+   "br_p1": 0.04738418422307935
+  },
+  {
+   "iterations": 300,
+   "exploitability": 0.005085540361025535,
+   "milliboots_per_hand": 5.085540361025536,
+   "pct_of_initial_pot": 0.2542770180512768,
+   "game_value_p0": -0.03806001329885763,
+   "br_p0": -0.03496088184686685,
+   "br_p1": 0.04513196256891792
+  },
+  {
+   "iterations": 350,
+   "exploitability": 0.0037753989218281443,
+   "milliboots_per_hand": 3.7753989218281445,
+   "pct_of_initial_pot": 0.1887699460914072,
+   "game_value_p0": -0.03855593303353476,
+   "br_p0": -0.036269418933512154,
+   "br_p1": 0.04382021677716844
+  },
+  {
+   "iterations": 400,
+   "exploitability": 0.00292151215363853,
+   "milliboots_per_hand": 2.9215121536385302,
+   "pct_of_initial_pot": 0.1460756076819265,
+   "game_value_p0": -0.0388761023664632,
+   "br_p0": -0.03712656868699354,
+   "br_p1": 0.0429695929942706
+  },
+  {
+   "iterations": 450,
+   "exploitability": 0.0023381201851992266,
+   "milliboots_per_hand": 2.3381201851992266,
+   "pct_of_initial_pot": 0.11690600925996134,
+   "game_value_p0": -0.03909470186293425,
+   "br_p0": -0.037698764135721236,
+   "br_p1": 0.04237500450611969
+  },
+  {
+   "iterations": 500,
+   "exploitability": 0.0019268510300183284,
+   "milliboots_per_hand": 1.9268510300183284,
+   "pct_of_initial_pot": 0.09634255150091642,
+   "game_value_p0": -0.03925087432476617,
+   "br_p0": -0.03810947411150314,
+   "br_p1": 0.041963176171539794
+  },
+  {
+   "iterations": 550,
+   "exploitability": 0.0016239419653991602,
+   "milliboots_per_hand": 1.6239419653991602,
+   "pct_of_initial_pot": 0.08119709826995801,
+   "game_value_p0": -0.039367316272915884,
+   "br_p0": -0.03841229094760189,
+   "br_p1": 0.04166017487840021
+  },
+  {
+   "iterations": 600,
+   "exploitability": 0.0013965315472677202,
+   "milliboots_per_hand": 1.3965315472677202,
+   "pct_of_initial_pot": 0.06982657736338602,
+   "game_value_p0": -0.03945701796487139,
+   "br_p0": -0.038639338908526166,
+   "br_p1": 0.04143240200306161
+  },
+  {
+   "iterations": 650,
+   "exploitability": 0.0012201404978464565,
+   "milliboots_per_hand": 1.2201404978464565,
+   "pct_of_initial_pot": 0.06100702489232283,
+   "game_value_p0": -0.039528058556765513,
+   "br_p0": -0.03881535881469571,
+   "br_p1": 0.04125563981038862
+  },
+  {
+   "iterations": 700,
+   "exploitability": 0.0010794869318679935,
+   "milliboots_per_hand": 1.0794869318679936,
+   "pct_of_initial_pot": 0.053974346593399676,
+   "game_value_p0": -0.03958564251530024,
+   "br_p0": -0.03895976765707182,
+   "br_p1": 0.04111874152080781
+  },
+  {
+   "iterations": 750,
+   "exploitability": 0.0009638253043624777,
+   "milliboots_per_hand": 0.9638253043624777,
+   "pct_of_initial_pot": 0.048191265218123884,
+   "game_value_p0": -0.03963304158480445,
+   "br_p0": -0.039078387060480474,
+   "br_p1": 0.04100603766920543
+  },
+  {
+   "iterations": 800,
+   "exploitability": 0.0008694277565102285,
+   "milliboots_per_hand": 0.8694277565102284,
+   "pct_of_initial_pot": 0.04347138782551142,
+   "game_value_p0": -0.039672614773973026,
+   "br_p0": -0.03917639455158179,
+   "br_p1": 0.04091525006460225
+  },
+  {
+   "iterations": 850,
+   "exploitability": 0.0007895109812731359,
+   "milliboots_per_hand": 0.7895109812731359,
+   "pct_of_initial_pot": 0.039475549063656794,
+   "game_value_p0": -0.03970608110365579,
+   "br_p0": -0.039260073301964224,
+   "br_p1": 0.040839095264510496
+  },
+  {
+   "iterations": 900,
+   "exploitability": 0.0007204689829515692,
+   "milliboots_per_hand": 0.7204689829515692,
+   "pct_of_initial_pot": 0.03602344914757846,
+   "game_value_p0": -0.03973473886734852,
+   "br_p0": -0.03933119995744818,
+   "br_p1": 0.04077213792335132
+  },
+  {
+   "iterations": 950,
+   "exploitability": 0.0006624940672783526,
+   "milliboots_per_hand": 0.6624940672783526,
+   "pct_of_initial_pot": 0.03312470336391763,
+   "game_value_p0": -0.039759561296296056,
+   "br_p0": -0.03939160967814269,
+   "br_p1": 0.040716597812699394
+  },
+  {
+   "iterations": 1000,
+   "exploitability": 0.0006127377654912732,
+   "milliboots_per_hand": 0.6127377654912731,
+   "pct_of_initial_pot": 0.030636888274563658,
+   "game_value_p0": -0.0397812406966187,
+   "br_p0": -0.039443888154561645,
+   "br_p1": 0.04066936368554419
+  }
+ ],
+ "current_iterate": [
+  {
+   "iterations": 50,
+   "exploitability": 0.14871639454049024
+  },
+  {
+   "iterations": 100,
+   "exploitability": 0.07054107307678327
+  },
+  {
+   "iterations": 150,
+   "exploitability": 0.019907445360162326
+  },
+  {
+   "iterations": 200,
+   "exploitability": 0.0041817410028002
+  },
+  {
+   "iterations": 250,
+   "exploitability": 0.0022977639161882377
+  },
+  {
+   "iterations": 300,
+   "exploitability": 0.0015333496702530335
+  },
+  {
+   "iterations": 350,
+   "exploitability": 0.0012951864535643252
+  },
+  {
+   "iterations": 400,
+   "exploitability": 0.0011557331564343437
+  },
+  {
+   "iterations": 450,
+   "exploitability": 0.0009861221085997983
+  },
+  {
+   "iterations": 500,
+   "exploitability": 0.000703957927389167
+  },
+  {
+   "iterations": 550,
+   "exploitability": 0.0006755480274848145
+  },
+  {
+   "iterations": 600,
+   "exploitability": 0.0006263920932073723
+  },
+  {
+   "iterations": 650,
+   "exploitability": 0.0005592808230378554
+  },
+  {
+   "iterations": 700,
+   "exploitability": 0.0004987605731409592
+  },
+  {
+   "iterations": 750,
+   "exploitability": 0.0004343564325156937
+  },
+  {
+   "iterations": 800,
+   "exploitability": 0.00042917531918419335
+  },
+  {
+   "iterations": 850,
+   "exploitability": 0.0003855515666559145
+  },
+  {
+   "iterations": 900,
+   "exploitability": 0.0003684662512910483
+  },
+  {
+   "iterations": 950,
+   "exploitability": 0.0003313475962015526
+  },
+  {
+   "iterations": 1000,
+   "exploitability": 0.000324115354063452
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+Building private tables...
+Loaded checkpoint at 1000 iterations
+iter=  1000  expl=6.127e-04 boots/hand  (   0.6127 mb/hand,  0.0306% of pot)  v0=-0.039781
+
+=== Blind/seen equilibrium statistics: boot=1 stack=50 k<=8 r<=2 ===
+  iterations=1000  exploitability=6.127e-04  v_0=-0.039781
+
+  P(seat 1 stays blind at turn 1, unconditional) = 0.999965
+  P(seat 2 stays blind at turn 1 | reached)      = 0.005176
+
+  --- seat 1 conversion timing ---
+   turn | P(reach blind) | P(convert there) | P(look | reached)
+      1 |       1.000000 |         0.000035 |          0.000035
+      2 |       0.588575 |         0.462748 |          0.786217
+      3 |       0.125448 |         0.007328 |          0.058415
+      4 |       0.118116 |         0.109967 |          0.931006
+   never looks (incl. hand ending first): 0.419922
+   expected blind (half-price) bets/hand: 1.252058
+   P(demands a show while blind)        : 0.000011
+   P(demands a show while seen)         : 0.102764
+   P(packs while still blind)           : 0.000004
+
+  --- seat 2 conversion timing ---
+   turn | P(reach blind) | P(convert there) | P(look | reached)
+      1 |       0.999986 |         0.994811 |          0.994824
+      2 |       0.000372 |         0.000022 |          0.057836
+      3 |       0.000001 |         0.000000 |          0.218210
+      4 |       0.000000 |         0.000000 |          0.138042
+   never looks (incl. hand ending first): 0.005167
+   expected blind (half-price) bets/hand: 0.005516
+   P(demands a show while blind)        : 0.005142
+   P(demands a show while seen)         : 0.076012
+   P(packs while still blind)           : 0.000012
+
+=== Dominant-action share (p > 0.5): boot=1 stack=50 k<=8 r<=2 ===
+  group                     | infosets  | unweighted | reach-weighted
+  --------------------------|-----------|------------|---------------
+  look (see / stay-blind)   |       251 |     0.9203 |         1.0000
+  bet, actor blind          |       235 |     0.8383 |         1.0000
+  bet, actor seen           |   913,825 |     0.7963 |         0.9800
+  OVERALL                   |           |     0.7963 |         0.9932
+
+=== Stack sweep (expect all identical) ===
+  {'stack': 34, 'status': 'ok', 'n_nodes': 5929, 'game_value_p0': -0.014049237479203846, 'exploitability': 0.113014565764114, 'p1_stay_blind_first': 0.9790705501610946, 'tree_identical': True, 'values_identical': True}
+  {'stack': 40, 'status': 'ok', 'n_nodes': 5929, 'game_value_p0': -0.014049237479203846, 'exploitability': 0.113014565764114, 'p1_stay_blind_first': 0.9790705501610946, 'tree_identical': True, 'values_identical': True}
+  {'stack': 50, 'status': 'ok', 'n_nodes': 5929, 'game_value_p0': -0.014049237479203846, 'exploitability': 0.113014565764114, 'p1_stay_blind_first': 0.9790705501610946, 'tree_identical': True, 'values_identical': True}
+  {'stack': 75, 'status': 'ok', 'n_nodes': 5929, 'game_value_p0': -0.014049237479203846, 'exploitability': 0.113014565764114, 'p1_stay_blind_first': 0.9790705501610946, 'tree_identical': True, 'values_identical': True}
+  {'stack': 100, 'status': 'ok', 'n_nodes': 5929, 'game_value_p0': -0.014049237479203846, 'exploitability': 0.113014565764114, 'p1_stay_blind_first': 0.9790705501610946, 'tree_identical': True, 'values_identical': True}
+
+=== Boot sweep ===
+  {'boot': 1, 'fixed_stack': {'status': 'ok', 'game_value_p0': -0.014049237479203846, 'exploitability': 0.113014565764114, 'p1_stay_blind_first': 0.9790705501610946}, 'scaled_stack': {'status': 'ok', 'game_value_p0': -0.014049237479203846, 'game_value_per_boot': -0.014049237479203846, 'p1_stay_blind_first': 0.9790705501610946, 'strategy_matches_boot_1': True}}
+  {'boot': 2, 'fixed_stack': {'status': 'outside RULES.md: exposure exceeds the stack and E1 specifies no all-in rule'}, 'scaled_stack': {'status': 'ok', 'game_value_p0': -0.028098474958407692, 'game_value_per_boot': -0.014049237479203846, 'p1_stay_blind_first': 0.9790705501610946, 'strategy_matches_boot_1': True}}
+  {'boot': 3, 'fixed_stack': {'status': 'outside RULES.md: exposure exceeds the stack and E1 specifies no all-in rule'}, 'scaled_stack': {'status': 'ok', 'game_value_p0': -0.04214771243768942, 'game_value_per_boot': -0.014049237479229808, 'p1_stay_blind_first': 0.9790705501610943, 'strategy_matches_boot_1': True}}
+  {'boot': 5, 'fixed_stack': {'status': 'outside RULES.md: exposure exceeds the stack and E1 specifies no all-in rule'}, 'scaled_stack': {'status': 'ok', 'game_value_p0': -0.07024618739614051, 'game_value_per_boot': -0.014049237479228103, 'p1_stay_blind_first': 0.9790705501610943, 'strategy_matches_boot_1': True}}
+
+=== Cap sweep (the parameters that actually bite) ===
+  k<=2 r<=2: nodes=   48 expl=6.91e-06 v0=-0.000011 P1 stay-blind=1.0000 (219s)
+  k<=4 r<=2: nodes=  399 expl=8.42e-05 v0=+0.000131 P1 stay-blind=1.0000 (343s)
+  k<=6 r<=2: nodes= 1832 expl=1.40e-03 v0=-0.011897 P1 stay-blind=0.9999 (317s)
+  k<=8 r<=0: nodes=  311 expl=9.33e-05 v0=-0.052877 P1 stay-blind=1.0000 (306s)
+  k<=8 r<=1: nodes= 1925 expl=9.60e-04 v0=-0.039139 P1 stay-blind=0.9999 (330s)
+
+Wrote experiments_results.json
