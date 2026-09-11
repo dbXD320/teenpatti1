@@ -5,3 +5,10 @@ __pycache__/
 # Large solver artifacts (regenerate with run_main_solve.py)
 # GitHub rejects any single file over 100 MB
 *.pkl
+
+# Virtual environment
+.venv/
+venv/
+
+# Test cache
+.pytest_cache/
