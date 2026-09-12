@@ -12,3 +12,7 @@ venv/
 
 # Test cache
 .pytest_cache/
+
+# Generated benchmark training set (80 MB, regenerates deterministically
+# from solution_default.pkl via `python generate.py`, seed 20260912)
+teenpattibench_train.jsonl
