@@ -2,8 +2,8 @@
 
 **Status: eval and training sets generated. 18 Phase 3 tests pass (168 with Phases 1–2).**
 
-Modules: [generate.py](generate.py), [prompts.py](prompts.py), [metrics.py](metrics.py).
-Tests: [test_phase3.py](test_phase3.py).
+Modules: [generate.py](../src/generate.py), [prompts.py](../src/prompts.py), [metrics.py](../src/metrics.py).
+Tests: [test_phase3.py](../tests/test_phase3.py).
 Outputs: `teenpattibench_eval.jsonl` (2,000), `teenpattibench_train.jsonl` (50,000),
 `teenpattibench_stats.json`, `teenpattibench_system_prompt.txt`.
 

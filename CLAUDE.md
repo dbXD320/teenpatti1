@@ -19,7 +19,7 @@ partition* in exchange for a price discount. No studied poker variant has this.
 Methodology follows **PokerBench** (Zhuang et al., AAAI 2025, arXiv:2501.08328):
 solve the game exactly, then use the solution as an answer key to grade LLMs.
 
-`RULES.md` (Phase 0) is the frozen contract. **Do not change it, the solver, or
+`docs/RULES.md` (Phase 0) is the frozen contract. **Do not change it, the solver, or
 the abstraction** without the user explicitly asking.
 
 ---
@@ -28,15 +28,15 @@ the abstraction** without the user explicitly asking.
 
 | Phase | What | State |
 |---|---|---|
-| 0 | Frozen rules specification | Complete — `RULES.md` |
-| 1 | Evaluator, engine, abstraction, tree enumeration | Complete — `PHASE1.md`, 113 tests |
-| 2 | CFR+ solve, exploitability, sweeps | Complete — `PHASE2.md`, `RESULTS_PHASE2.md`, 37 tests |
-| 3 | TeenPattiBench dataset + metrics | Complete — `PHASE3.md`, 18 tests |
+| 0 | Frozen rules specification | Complete — `docs/RULES.md` |
+| 1 | Evaluator, engine, abstraction, tree enumeration | Complete — `docs/PHASE1.md`, 113 tests |
+| 2 | CFR+ solve, exploitability, sweeps | Complete — `docs/PHASE2.md`, `docs/RESULTS_PHASE2.md`, 37 tests |
+| 3 | TeenPattiBench dataset + metrics | Complete — `docs/PHASE3.md`, 18 tests |
 | 4 | **Run LLM evaluation** | **Not started** |
 
 **168 tests pass, ~86 s.** Last commit `ad81395`.
 
-`EXPLAINER.md` is a plain-language walkthrough of Phases 1–2 for non-specialists
+`docs/EXPLAINER.md` is a plain-language walkthrough of Phases 1–2 for non-specialists
 (supervisor, viva, reviewer). Useful for recovering the *why* quickly.
 
 ---
@@ -68,7 +68,7 @@ and it is the benchmark's primary target.
 ### 1. The peeking trap (the single most important thing here)
 
 A blind player has not looked. Their information set is the **public history
-alone** (`RULES.md` §12.4). If a blind player's strategy, regrets, or prompt are
+alone** (`docs/RULES.md` §12.4). If a blind player's strategy, regrets, or prompt are
 ever indexed by their own cards, the program learns a fantasy — *"bet huge while
 blind, but only holding three aces"* — and **it does not crash, does not warn,
 converges beautifully, and produces a confident worthless answer** that is
@@ -101,7 +101,7 @@ attaches to the average. They genuinely differ (max delta ≈ 0.999).
 κ is correct for *who wins* and wrong as a solver abstraction — 442 of 741 κ
 classes (60%) contain hands with different equities. Use the 1,755 suit-isomorphic
 classes. `cfr.PrivateTables.class_of_hand` and
-`abstraction.iso_class_of_hand` **must stay identical**; `generate.py` asserts it.
+`abstraction.iso_class_of_hand` **must stay identical**; `src/generate.py` asserts it.
 
 ### 4. Exact arithmetic at terminals
 
@@ -115,17 +115,17 @@ breaks zero-sum on 43% of forced showdowns.
 
 | File | Owns | Notes |
 |---|---|---|
-| `hands.py` | Deck, ranking, κ classes, exact equity | Import-time self-checks |
-| `game.py` | State machine, legality, pricing, payoffs, info-set types | `Fraction` payoffs |
-| `abstraction.py` | 1,755 suit-isomorphic orbits, 25 equity buckets | Burnside cross-check |
-| `tree.py` | Public tree enumeration, blind-infoset verification | |
-| `cfr.py` | CFR+ solver, private tables, card-removal matrix | `average_strategy()` |
-| `exploitability.py` | Best response, exploitability, convergence logging | |
-| `experiments.py` | Sweeps, blind stats, dominance; `turn_index`, `node_reach`, `seen_infoset_reach` | Phase 3 reuses these three |
-| `gate_phase2.py`, `run_main_solve.py` | Phase 2 gate and solve driver | |
-| **`prompts.py`** | English templating + the leakage guard | Phase 3 |
-| **`generate.py`** | Dataset generation pipeline | Phase 3 |
-| **`metrics.py`** | AA / EM / TVD scoring and breakdowns | Phase 3 |
+| `src/hands.py` | Deck, ranking, κ classes, exact equity | Import-time self-checks |
+| `src/game.py` | State machine, legality, pricing, payoffs, info-set types | `Fraction` payoffs |
+| `src/abstraction.py` | 1,755 suit-isomorphic orbits, 25 equity buckets | Burnside cross-check |
+| `src/tree.py` | Public tree enumeration, blind-infoset verification | |
+| `src/cfr.py` | CFR+ solver, private tables, card-removal matrix | `average_strategy()` |
+| `src/exploitability.py` | Best response, exploitability, convergence logging | |
+| `src/experiments.py` | Sweeps, blind stats, dominance; `turn_index`, `node_reach`, `seen_infoset_reach` | Phase 3 reuses these three |
+| `src/gate_phase2.py`, `src/run_main_solve.py` | Phase 2 gate and solve driver | |
+| **`src/prompts.py`** | English templating + the leakage guard | Phase 3 |
+| **`src/generate.py`** | Dataset generation pipeline | Phase 3 |
+| **`src/metrics.py`** | AA / EM / TVD scoring and breakdowns | Phase 3 |
 
 ---
 
@@ -137,22 +137,22 @@ Python 3.14 venv at `.venv`; deps are just `numpy` and `pytest`.
 ```bash
 source .venv/bin/activate          # or prefix with .venv/bin/
 python -m pytest -q                # 168 tests, ~86 s
-python generate.py --dry-run       # inventory + composition, writes nothing
-python generate.py                 # regenerate datasets (deterministic, seed 20260912)
-python metrics.py --self-test      # must print 100.00% AA / 100.00% EM / TVD 0
-python run_main_solve.py 1000 50   # re-solve from scratch (~55 min) — rarely needed
+python src/generate.py --dry-run       # inventory + composition, writes nothing
+python src/generate.py                 # regenerate datasets (deterministic, seed 20260912)
+python src/metrics.py --self-test      # must print 100.00% AA / 100.00% EM / TVD 0
+python src/run_main_solve.py 1000 50   # re-solve from scratch (~55 min) — rarely needed
 ```
 
 ### Files NOT in git (regenerable, gitignored)
 
-- `solution_default.pkl` — **107 MB checkpoint, the answer key.** Everything
-  depends on it. Regenerate with `run_main_solve.py 1000 50` (~55 min). Exceeds
+- `data/solution_default.pkl` — **107 MB checkpoint, the answer key.** Everything
+  depends on it. Regenerate with `src/run_main_solve.py 1000 50` (~55 min). Exceeds
   GitHub's 100 MB hard limit, so it can never be committed without Git LFS.
-- `teenpattibench_train.jsonl` — 80 MB, regenerates in ~10 s.
+- `data/teenpattibench_train.jsonl` — 80 MB, regenerates in ~10 s.
 - `.venv/`, `__pycache__/`, `.pytest_cache/`
 
-Committed: `teenpattibench_eval.jsonl` (3.2 MB), `teenpattibench_stats.json`,
-`teenpattibench_system_prompt.txt`.
+Committed: `data/teenpattibench_eval.jsonl` (3.2 MB), `data/teenpattibench_stats.json`,
+`data/teenpattibench_system_prompt.txt`.
 
 ### Git identity
 
@@ -166,9 +166,9 @@ https://github.com/dbXD320/teenpatti1 — **public**.
 
 ## Phase 3 dataset, in brief
 
-`teenpattibench_eval.jsonl` — **2,000 items**: 1,500 seen betting, 162 look
+`data/teenpattibench_eval.jsonl` — **2,000 items**: 1,500 seen betting, 162 look
 (conversion), 138 blind betting, 200 mixed (TVD-scored, not graded).
-`teenpattibench_train.jsonl` — **50,000 items**, disjoint at the (node, class)
+`data/teenpattibench_train.jsonl` — **50,000 items**, disjoint at the (node, class)
 level. Each record carries prompt, correct action, correct amount, the **full
 solver distribution**, and metadata (seat, blind/seen, own-turn index, hand
 bucket, betting history, actions to cap).
@@ -177,7 +177,7 @@ bucket, betting history, actions to cap).
 exist in the entire game, so eval takes 70% (300 items = **15.0%** of eval,
 against 0.0532% natural — a 282× oversampling) and training gets the remaining
 128 distinct, emitted 20× each. **The 30–40% blind eval share in the Phase 3
-brief is unreachable**; `PHASE3.md` §2 documents the ceiling and the trade-offs.
+brief is unreachable**; `docs/PHASE3.md` §2 documents the ceiling and the trade-offs.
 Duplicating blind items would be meaningless — a blind prompt is a deterministic
 function of public history, so two items from one infoset are byte-identical.
 
@@ -189,14 +189,14 @@ rebalancing.)
 
 ## Traps already hit — don't rediscover these
 
-1. **`RULES.md` §5.3's card-removal intuition is inverted.** It says K♠K♥7♠
+1. **`docs/RULES.md` §5.3's card-removal intuition is inverted.** It says K♠K♥7♠
    "removes a third spade". It holds **two** spades and performs **worse** than
    K♠K♥7♦ (equity 0.89619518 vs 0.89679223, exactly 11 more losses). Concentrating
    removals in one suit leaves the others *fuller*, and three-card flush counts
    grow faster than linearly. The spec's conclusion is right, its stated reason is
-   backwards. PHASE1.md §3 has the arithmetic.
+   backwards. docs/PHASE1.md §3 has the arithmetic.
 
-2. **`RULES.md` §10.3's prediction is wrong.** It says a solved strategy not using
+2. **`docs/RULES.md` §10.3's prediction is wrong.** It says a solved strategy not using
    the blind show right is "almost certainly an implementation bug". Measured at
    equilibrium: 1.1e-05 (seat 1) and 5.1e-03 (seat 2), robust across all six cap
    configurations. Seen players demand shows 10–100× more often. Not a bug — the
@@ -211,10 +211,10 @@ rebalancing.)
 
 4. **Stratify-then-rebalance starves rare labels.** `raise` and `show` are 60,653
    and 51,050 of 913,825 against 454,237 `chaal`. Sampling across textures first
-   and rebalancing after undershoots badly. `generate.py` draws an equal quota
+   and rebalancing after undershoots badly. `src/generate.py` draws an equal quota
    from *each label's own strata* in one pass.
 
-5. **Unresolved:** `PHASE1.md` §7 gives 2♣2♦3♥ an equity of 0.7403; the code gives
+5. **Unresolved:** `docs/PHASE1.md` §7 gives 2♣2♦3♥ an equity of 0.7403; the code gives
    **0.74080**. The A♠K♥J♦ figure (0.7428) matches. The finding (weakest pair has
    lower equity than best high card) holds either way. Don't know which is the typo.
 
@@ -231,7 +231,7 @@ conversion timing**, where no corresponding text exists and the correct pattern 
 non-monotone and unguessable. If it holds, this is a cleaner probe of reasoning
 versus retrieval than PokerBench could run.
 
-`metrics.py` reports the per-turn conversion breakdown that tests this. **Never
+`src/metrics.py` reports the per-turn conversion breakdown that tests this. **Never
 aggregate conversion accuracy across turns** — it averages the turn-3 dip and the
 turn-4 spike into a meaningless number.
 
@@ -240,7 +240,7 @@ exist in the game) and is a control stratum, not a test — report it, don't
 interpret it. **Turn 3 is the most informative stratum**: the solver says *don't*
 look, having looked willingly at turn 2.
 
-Prediction file format for `metrics.py --predictions`: JSONL with `id`, `action`
+Prediction file format for `src/metrics.py --predictions`: JSONL with `id`, `action`
 (raw text is parsed), optional `amount` for Exact Match, optional `distribution`
 for the mixed subset. A missing prediction raises rather than scoring as wrong.
 

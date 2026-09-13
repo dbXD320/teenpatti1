@@ -5,8 +5,8 @@ Distilled results only. Methodology, solver design and justification are in
 
 All figures are from the **average strategy** of the default configuration
 `boot=1 stack=50 k<=8 r<=2`, 1,000 CFR+ iterations, 54.9 min wall time.
-Source data: [convergence_default.json](convergence_default.json),
-[experiments_results.json](experiments_results.json),
+Source data: [convergence_default.json](../data/convergence_default.json),
+[experiments_results.json](../data/experiments_results.json),
 [solve_default.log](solve_default.log), [experiments.log](experiments.log).
 
 ---

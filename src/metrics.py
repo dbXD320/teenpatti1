@@ -314,7 +314,7 @@ def self_test(items):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--eval", default="teenpattibench_eval.jsonl")
+    ap.add_argument("--eval", default="data/teenpattibench_eval.jsonl")
     ap.add_argument("--predictions")
     ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--json", help="write the report as JSON to this path")

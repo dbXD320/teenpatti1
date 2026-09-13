@@ -2,9 +2,9 @@
 
 **Status: solver complete and converged. 37 Phase 2 tests pass (150 with Phase 1).**
 
-Modules: [cfr.py](cfr.py), [exploitability.py](exploitability.py),
-[experiments.py](experiments.py), [gate_phase2.py](gate_phase2.py),
-[run_main_solve.py](run_main_solve.py). Tests: [test_cfr.py](test_cfr.py).
+Modules: [cfr.py](../src/cfr.py), [exploitability.py](../src/exploitability.py),
+[experiments.py](../src/experiments.py), [gate_phase2.py](../src/gate_phase2.py),
+[run_main_solve.py](../src/run_main_solve.py). Tests: [test_cfr.py](../tests/test_cfr.py).
 
 Reproduce with `python gate_phase2.py`, `python run_main_solve.py 1000 50`,
 `python experiments.py`, `python -m pytest -q`.

@@ -15,4 +15,8 @@ venv/
 
 # Generated benchmark training set (80 MB, regenerates deterministically
 # from solution_default.pkl via `python generate.py`, seed 20260912)
-teenpattibench_train.jsonl
+data/teenpattibench_train.jsonl
+
+# Phase 4 run artifacts (model predictions, eval subsets, scored reports).
+# Model predictions and scored reports; outputs, not sources.
+runs/

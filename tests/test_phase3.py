@@ -22,8 +22,8 @@ import prompts as P
 from game import ACTION_NAMES, amount_for
 from hands import RANK_CHARS, SUIT_CHARS
 
-EVAL = "teenpattibench_eval.jsonl"
-TRAIN = "teenpattibench_train.jsonl"
+EVAL = "data/teenpattibench_eval.jsonl"
+TRAIN = "data/teenpattibench_train.jsonl"
 
 pytestmark = pytest.mark.skipif(
     not os.path.exists(EVAL),

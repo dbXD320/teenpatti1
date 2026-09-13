@@ -2,9 +2,9 @@
 
 **Status: complete. 113 tests pass. No departures from `RULES.md`.**
 
-Modules: [hands.py](hands.py), [game.py](game.py), [abstraction.py](abstraction.py),
-[tree.py](tree.py). Tests: [test_hands.py](test_hands.py), [test_game.py](test_game.py),
-[test_abstraction.py](test_abstraction.py), [test_tree.py](test_tree.py).
+Modules: [hands.py](../src/hands.py), [game.py](../src/game.py), [abstraction.py](../src/abstraction.py),
+[tree.py](../src/tree.py). Tests: [test_hands.py](../tests/test_hands.py), [test_game.py](../tests/test_game.py),
+[test_abstraction.py](../tests/test_abstraction.py), [test_tree.py](../tests/test_tree.py).
 
 Reproduce with `python tree.py`, `python abstraction.py`, `python -m pytest -q`.
 
@@ -307,7 +307,7 @@ additions rather than departures:
 
 1. **`Fraction` arithmetic** throughout, forced by §6.1. §10.6's formula is implemented
    verbatim; only the numeric type is a choice.
-2. **Information-set types live in [game.py](game.py), not [tree.py](tree.py)** — `BlindInfoSet`,
+2. **Information-set types live in [game.py](../src/game.py), not [tree.py](../src/tree.py)** — `BlindInfoSet`,
    `SeenInfoSet` and `observation()` are inseparable from the state machine that gates card
    access, so splitting them across modules would have weakened the structural guarantee.
    `tree.py` owns enumeration, as specified.

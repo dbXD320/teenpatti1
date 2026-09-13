@@ -51,11 +51,11 @@ from hands import HANDS
 # Configuration
 # --------------------------------------------------------------------------
 
-CHECKPOINT = "solution_default.pkl"
-EVAL_PATH = "teenpattibench_eval.jsonl"
-TRAIN_PATH = "teenpattibench_train.jsonl"
-STATS_PATH = "teenpattibench_stats.json"
-SYSTEM_PATH = "teenpattibench_system_prompt.txt"
+CHECKPOINT = "data/solution_default.pkl"
+EVAL_PATH = "data/teenpattibench_eval.jsonl"
+TRAIN_PATH = "data/teenpattibench_train.jsonl"
+STATS_PATH = "data/teenpattibench_stats.json"
+SYSTEM_PATH = "data/teenpattibench_system_prompt.txt"
 
 SEED = 20260912
 

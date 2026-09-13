@@ -16,8 +16,8 @@ from game import DEFAULT_CONFIG
 import cfr
 import exploitability as EX
 
-CHECKPOINT = "solution_default.pkl"
-CURVE = "convergence_default.json"
+CHECKPOINT = "data/solution_default.pkl"
+CURVE = "data/convergence_default.json"
 
 
 def main() -> None:
