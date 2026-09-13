@@ -32,9 +32,19 @@ the abstraction** without the user explicitly asking.
 | 1 | Evaluator, engine, abstraction, tree enumeration | Complete — `docs/PHASE1.md`, 113 tests |
 | 2 | CFR+ solve, exploitability, sweeps | Complete — `docs/PHASE2.md`, `docs/RESULTS_PHASE2.md`, 37 tests |
 | 3 | TeenPattiBench dataset + metrics | Complete — `docs/PHASE3.md`, 18 tests |
-| 4 | **Run LLM evaluation** | **Not started** |
+| 4 | LLM evaluation | First model scored — `docs/PHASE4.md` |
 
-**168 tests pass, ~86 s.** Last commit `ad81395`.
+**168 tests pass, ~86 s.**
+
+**Phase 4 so far.** Qwen3-8B (fp16, Kaggle GPU) over all 2,000 eval items:
+**32.94% Action Accuracy**, against 25.94% for the best trivial policy. Read every
+stratum against *its own* baseline — conversion is **−25.3** and blind betting
+**−11.6** relative to theirs, i.e. both are worse than answering one word forever.
+Two structural findings: the model **never packs** (0 of 2,000, though pack is correct
+on 25% of seen items), and it gives **one identical answer across every hand** in 40 of
+74 public nodes — it is not reading its own cards. `docs/PHASE4.md` has the detail and
+the caveats, which matter: a 4-bit run of the same model agreed with the fp16 run on
+only 62.5% of items.
 
 `docs/EXPLAINER.md` is a plain-language walkthrough of Phases 1–2 for non-specialists
 (supervisor, viva, reviewer). Useful for recovering the *why* quickly.
