@@ -243,13 +243,31 @@ def assert_no_private_leak(prompt: str, *, where: str = "") -> None:
 # The template
 # --------------------------------------------------------------------------
 
-def render_prompt(state: State, hand=None) -> str:
+def render_prompt(state: State, hand=None, action_order=None) -> str:
     """Render one decision into an English prompt.
 
     `hand` must be supplied for a seen actor and must be None for a blind one.
     Supplying a hand for a blind actor raises rather than being ignored: a
     caller that passes one has misunderstood the information partition, and
     silently dropping it would hide that.
+
+    `action_order` controls the order in which the legal actions are PRESENTED.
+    It must be a permutation of `legal_actions(state)` -- same set, any order --
+    and it reorders both the pricing sentence and the closing "Your legal actions
+    are:" line, so the whole prompt reads in one consistent order.
+
+    Default `None` keeps the engine's own order (pack, chaal, raise, show), which
+    is what the v1 dataset shipped with. That order is IDENTICAL in every prompt
+    of that dataset, which makes menu position perfectly confounded with action
+    identity: `pack` is at index 0 in all 1,838 betting prompts and `see` is at
+    index 0 in all 162 look prompts. A model that simply favours an early slot is
+    then indistinguishable from one that has an opinion about folding. Passing an
+    explicit permutation here is how that confound is broken; see
+    `make_eval_shuffled.py`.
+
+    Presentation order is the only thing this changes. The legal set, the prices,
+    the correct action and its amount are all properties of the state and are
+    untouched.
     """
     if state.is_terminal:
         raise PromptError("terminal states are not decisions and cannot be templated")
@@ -261,6 +279,21 @@ def render_prompt(state: State, hand=None) -> str:
     legal = legal_actions(state)
     if not legal:
         raise PromptError(f"no legal actions at k={state.k} r={state.r}")
+
+    # Presentation order. Validated as a permutation rather than trusted: a
+    # caller that drops or duplicates an action would otherwise ship a prompt
+    # whose menu disagrees with the state's legal set, and the item's label
+    # would be graded against actions the model was never offered.
+    if action_order is None:
+        display = legal
+    else:
+        display = tuple(action_order)
+        if sorted(display) != sorted(legal):
+            raise PromptError(
+                f"action_order must be a permutation of the legal actions. "
+                f"got {[ACTION_NAMES.get(a, a) for a in display]}, "
+                f"legal {[ACTION_NAMES[a] for a in legal]}"
+            )
 
     if blind and hand is not None:
         raise PromptError(
@@ -339,12 +372,20 @@ def render_prompt(state: State, hand=None) -> str:
         )
     else:
         px = blind_px if blind else seen_px
-        bits = [f"chaal costs {px['chaal']}"]
-        if Action.RAISE in legal:
-            bits.append(f"a raise costs {px['raise']}")
-        if Action.SHOW in legal:
-            bits.append(f"a show costs {px['show']}")
-        bits.append("packing costs nothing")
+        clause = {
+            Action.CHAAL: f"chaal costs {px['chaal']}",
+            Action.RAISE: f"a raise costs {px['raise']}",
+            Action.SHOW: f"a show costs {px['show']}",
+            Action.PACK: "packing costs nothing",
+        }
+        # With no explicit order, the pricing sentence keeps the fixed order it
+        # had in v1 (chaal, raise, show, pack) so that the default output stays
+        # byte-identical to the shipped dataset. Only an explicit permutation
+        # moves it, and then it follows the same order as the menu below.
+        price_order = display if action_order is not None else (
+            Action.CHAAL, Action.RAISE, Action.SHOW, Action.PACK
+        )
+        bits = [clause[a] for a in price_order if a in legal]
         out.append("At this stake, " + ", ".join(bits) + ".")
         if blind:
             out.append(
@@ -353,7 +394,7 @@ def render_prompt(state: State, hand=None) -> str:
             )
 
     # -- the ask -----------------------------------------------------------
-    names = [ACTION_NAMES[a] for a in legal]
+    names = [ACTION_NAMES[a] for a in display]
     out.append("Your legal actions are: " + ", ".join(names) + ".")
     out.append("Do not explain your answer. Your optimal action is:")
 
