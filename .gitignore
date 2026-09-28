@@ -20,3 +20,9 @@ data/teenpattibench_train.jsonl
 # Phase 4 run artifacts (model predictions, eval subsets, scored reports).
 # Model predictions and scored reports; outputs, not sources.
 runs/
+
+# Large training sets from generate_train_100k.py (169 MB at 100k items, over
+# GitHub's 100 MB hard limit). Regenerates deterministically from
+# solution_default.pkl; the stats sidecar is small but kept with its data file.
+data/teenpattibench_train_100k*.jsonl
+data/teenpattibench_train_100k*_stats.json
