@@ -1,0 +1,23 @@
+{"model": "Qwen3-4B", "eval": "v1", "status": "done", "action_accuracy": 33.05555555555556, "minutes": 1.73, "folded_system": false, "time_utc": "2026-09-28T18:08:03.565834+00:00"}
+{"model": "Qwen3-4B", "eval": "shuffled", "status": "done", "action_accuracy": 31.11111111111111, "minutes": 1.74, "folded_system": false, "time_utc": "2026-09-28T18:09:47.787664+00:00"}
+{"model": "Gemma 3 4B", "eval": "v1", "status": "done", "action_accuracy": 34.22222222222222, "minutes": 1.76, "folded_system": false, "time_utc": "2026-09-28T18:12:26.580307+00:00"}
+{"model": "Gemma 3 4B", "eval": "shuffled", "status": "done", "action_accuracy": 32.5, "minutes": 1.76, "folded_system": false, "time_utc": "2026-09-28T18:14:12.424452+00:00"}
+{"model": "Mistral 7B", "eval": "v1", "status": "done", "action_accuracy": 35.55555555555556, "minutes": 2.14, "folded_system": false, "time_utc": "2026-09-28T18:17:27.438638+00:00"}
+{"model": "Mistral 7B", "eval": "shuffled", "status": "done", "action_accuracy": 33.388888888888886, "minutes": 2.15, "folded_system": false, "time_utc": "2026-09-28T18:19:36.637965+00:00"}
+{"model": "Qwen3-8B", "eval": "v1", "status": "done", "action_accuracy": 33.888888888888886, "minutes": 2.37, "folded_system": false, "time_utc": "2026-09-28T18:22:52.933511+00:00"}
+{"model": "Qwen3-8B", "eval": "shuffled", "status": "done", "action_accuracy": 32.611111111111114, "minutes": 2.37, "folded_system": false, "time_utc": "2026-09-28T18:25:15.326782+00:00"}
+{"model": "Gemma 3 12B", "eval": "v1", "status": "done", "action_accuracy": 36.166666666666664, "minutes": 4.19, "folded_system": false, "time_utc": "2026-09-28T18:31:00.512604+00:00"}
+{"model": "Gemma 3 12B", "eval": "shuffled", "status": "done", "action_accuracy": 34.22222222222222, "minutes": 4.2, "folded_system": false, "time_utc": "2026-09-28T18:35:12.431809+00:00"}
+{"model": "Qwen3-14B", "status": "failed: RuntimeError: could not load: AutoModelForCausalLM: OutOfMemoryError: CUDA out of memory. Tried to allocate 170.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 9 | Gemma3ForConditionalGeneration: RuntimeEr", "time_utc": "2026-09-28T18:36:43.113951+00:00"}
+{"model": "Phi-4 14B", "status": "failed: RuntimeError: could not load: AutoModelForCausalLM: OutOfMemoryError: CUDA out of memory. Tried to allocate 350.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 1 | Gemma3ForConditionalGeneration: RuntimeEr", "time_utc": "2026-09-28T18:38:12.955087+00:00"}
+{"model": "Qwen3-30B-A3B", "status": "skip: needs ~64 GB, GPU has 42 GB", "time_utc": "2026-09-28T18:38:17.160797+00:00"}
+{"model": "Llama 3.2 3B", "eval": "v1", "status": "done", "action_accuracy": 26.77777777777778, "minutes": 1.18, "folded_system": false, "time_utc": "2026-09-28T18:51:43.279229+00:00"}
+{"model": "Llama 3.2 3B", "eval": "shuffled", "status": "done", "action_accuracy": 26.38888888888889, "minutes": 1.18, "folded_system": false, "time_utc": "2026-09-28T18:52:54.312167+00:00"}
+{"model": "Qwen3-14B", "eval": "v1", "status": "done", "action_accuracy": 33.666666666666664, "minutes": 3.67, "folded_system": false, "time_utc": "2026-09-28T18:58:06.221360+00:00"}
+{"model": "Qwen3-14B", "eval": "shuffled", "status": "done", "action_accuracy": 32.05555555555556, "minutes": 3.68, "folded_system": false, "time_utc": "2026-09-28T19:01:47.272361+00:00"}
+{"model": "Phi-4 14B", "eval": "v1", "status": "done", "action_accuracy": 31.77777777777778, "minutes": 3.49, "folded_system": false, "time_utc": "2026-09-28T19:07:25.739524+00:00"}
+{"model": "Phi-4 14B", "eval": "shuffled", "status": "done", "action_accuracy": 34.111111111111114, "minutes": 3.48, "folded_system": false, "time_utc": "2026-09-28T19:10:54.499189+00:00"}
+{"model": "Qwen3-30B-A3B", "eval": "v1", "status": "done", "action_accuracy": 29.055555555555557, "minutes": 2.87, "folded_system": false, "time_utc": "2026-09-28T19:23:07.261364+00:00"}
+{"model": "Qwen3-30B-A3B", "eval": "shuffled", "status": "done", "action_accuracy": 28.77777777777778, "minutes": 2.88, "folded_system": false, "time_utc": "2026-09-28T19:26:01.471289+00:00"}
+{"model": "Gemma 4 E2B", "eval": "v1", "status": "done", "action_accuracy": 31.555555555555557, "minutes": 3.9, "folded_system": false, "time_utc": "2026-09-28T20:43:06.445800+00:00"}
+{"model": "Gemma 4 E2B", "eval": "shuffled", "status": "done", "action_accuracy": 30.72222222222222, "minutes": 3.92, "folded_system": false, "time_utc": "2026-09-28T20:47:02.104860+00:00"}

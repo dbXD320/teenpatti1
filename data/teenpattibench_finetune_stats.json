@@ -1,0 +1,54 @@
+{
+ "generator": "generate_finetune.py",
+ "seed": 20260928,
+ "total": 100000,
+ "blind_repeat": 30,
+ "components": {
+  "B_contrast": 24002,
+  "C_F3_show": 8000,
+  "C_F1_pack_2menu": 6000,
+  "C_F4_strong": 6000,
+  "C_F2_raise_not_right": 12000,
+  "D_balance": 40158,
+  "A_blind": 3840
+ },
+ "labels": {
+  "show": 25643,
+  "pack": 25644,
+  "chaal": 25643,
+  "raise": 21000,
+  "stay-blind": 1320,
+  "see": 750
+ },
+ "raise_correct_when_legal": 0.32883404841689895,
+ "contrast_groups": 4931,
+ "contrast_group_sizes": {
+  "4": 3159,
+  "6": 1405,
+  "8": 367
+ },
+ "mean_label_prob_by_label": {
+  "chaal": 0.8393757096326727,
+  "show": 0.7058159360062298,
+  "pack": 0.8401296909513262,
+  "raise": 0.6958462003701977,
+  "see": 0.7662050412128673,
+  "stay-blind": 0.8376711178035375
+ },
+ "trivial_baselines": {
+  "always-pack": 0.25644,
+  "always-chaal": 0.25643,
+  "always-raise": 0.21,
+  "always-show": 0.25643,
+  "always-see": 0.0075,
+  "always-stay-blind": 0.0132
+ },
+ "quotas": {
+  "contrast": 24000,
+  "F1": 6000,
+  "F2": 12000,
+  "F3": 8000,
+  "F4": 6000
+ },
+ "mixed_items_included": 0
+}

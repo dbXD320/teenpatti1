@@ -1,0 +1,4 @@
+{"run": "llama3.2_3b_base_ftprompt", "eval": "v1", "status": "done", "action_accuracy": 27.27777777777778, "minutes": 3.83, "time_utc": "2026-09-29T17:43:04.112789+00:00"}
+{"run": "llama3.2_3b_base_ftprompt", "eval": "shuffled", "status": "done", "action_accuracy": 26.944444444444443, "minutes": 3.87, "time_utc": "2026-09-29T17:46:57.150273+00:00"}
+{"run": "llama3.2_3b_ft", "eval": "v1", "status": "done", "action_accuracy": 89.22222222222223, "minutes": 6.57, "time_utc": "2026-09-29T17:55:11.299762+00:00"}
+{"run": "llama3.2_3b_ft", "eval": "shuffled", "status": "done", "action_accuracy": 89.83333333333333, "minutes": 6.57, "time_utc": "2026-09-29T18:01:46.319916+00:00"}

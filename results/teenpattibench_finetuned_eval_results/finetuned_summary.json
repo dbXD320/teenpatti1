@@ -1,0 +1,215 @@
+{
+ "baselines": {
+  "all": 25.944444444444443,
+  "seen": 25.0,
+  "conversion": 62.96296296296296,
+  "blind_bet": 66.66666666666667
+ },
+ "rows": [
+  {
+   "model": "base, training prompt",
+   "slug": "llama3.2_3b_base_ftprompt",
+   "eval": "v1",
+   "aa_all": 27.28,
+   "aa_seen": 25.0,
+   "aa_conversion": 37.04,
+   "aa_blind_bet": 40.58,
+   "conv_turn1": 75.0,
+   "conv_turn2": 68.42,
+   "conv_turn3": 50.94,
+   "conv_turn4": 19.77,
+   "conv_turn1_n": 4,
+   "conv_turn2_n": 19,
+   "conv_turn3_n": 53,
+   "conv_turn4_n": 86,
+   "blind_fold_pct": 49.28,
+   "conversion_answers": {
+    "see": 162
+   }
+  },
+  {
+   "model": "base, training prompt",
+   "slug": "llama3.2_3b_base_ftprompt",
+   "eval": "shuffled",
+   "aa_all": 26.94,
+   "aa_seen": 26.47,
+   "aa_conversion": 37.04,
+   "aa_blind_bet": 20.29,
+   "conv_turn1": 75.0,
+   "conv_turn2": 68.42,
+   "conv_turn3": 50.94,
+   "conv_turn4": 19.77,
+   "conv_turn1_n": 4,
+   "conv_turn2_n": 19,
+   "conv_turn3_n": 53,
+   "conv_turn4_n": 86,
+   "blind_fold_pct": 75.36,
+   "conversion_answers": {
+    "see": 162
+   }
+  },
+  {
+   "model": "FINE-TUNED",
+   "slug": "llama3.2_3b_ft",
+   "eval": "v1",
+   "aa_all": 89.22,
+   "aa_seen": 89.87,
+   "aa_conversion": 80.25,
+   "aa_blind_bet": 92.75,
+   "conv_turn1": 25.0,
+   "conv_turn2": 89.47,
+   "conv_turn3": 77.36,
+   "conv_turn4": 82.56,
+   "conv_turn1_n": 4,
+   "conv_turn2_n": 19,
+   "conv_turn3_n": 53,
+   "conv_turn4_n": 86,
+   "blind_fold_pct": 0.0,
+   "conversion_answers": {
+    "stay-blind": 112,
+    "see": 50
+   }
+  },
+  {
+   "model": "FINE-TUNED",
+   "slug": "llama3.2_3b_ft",
+   "eval": "shuffled",
+   "aa_all": 89.83,
+   "aa_seen": 90.73,
+   "aa_conversion": 80.86,
+   "aa_blind_bet": 90.58,
+   "conv_turn1": 25.0,
+   "conv_turn2": 94.74,
+   "conv_turn3": 75.47,
+   "conv_turn4": 83.72,
+   "conv_turn1_n": 4,
+   "conv_turn2_n": 19,
+   "conv_turn3_n": 53,
+   "conv_turn4_n": 86,
+   "blind_fold_pct": 0.0,
+   "conversion_answers": {
+    "stay-blind": 111,
+    "see": 51
+   }
+  }
+ ],
+ "paired": [
+  {
+   "comparison": "fine-tuned vs base, training prompt",
+   "eval": "v1",
+   "delta_pts": 61.94,
+   "only_first_right": 1174,
+   "only_second_right": 59,
+   "mcnemar_p": 5.831403895242846e-270
+  },
+  {
+   "comparison": "fine-tuned vs base, training prompt",
+   "eval": "shuffled",
+   "delta_pts": 62.89,
+   "only_first_right": 1190,
+   "only_second_right": 58,
+   "mcnemar_p": 1.8291783647524492e-275
+  },
+  {
+   "comparison": "fine-tuned: shuffled vs v1",
+   "eval": "both",
+   "delta_pts": 0.61,
+   "only_first_right": 24,
+   "only_second_right": 13,
+   "mcnemar_p": 0.09887174959294498
+  }
+ ],
+ "answer_distributions": {
+  "llama3.2_3b_base_ftprompt_v1": {
+   "all": {
+    "pack": 1407,
+    "chaal": 418,
+    "see": 162,
+    "show": 13
+   },
+   "conversion": {
+    "see": 162
+   }
+  },
+  "llama3.2_3b_base_ftprompt_shuffled": {
+   "all": {
+    "pack": 1425,
+    "chaal": 408,
+    "see": 162,
+    "show": 5
+   },
+   "conversion": {
+    "see": 162
+   }
+  },
+  "llama3.2_3b_ft_v1": {
+   "all": {
+    "chaal": 558,
+    "pack": 480,
+    "show": 453,
+    "raise": 347,
+    "stay-blind": 112,
+    "see": 50
+   },
+   "conversion": {
+    "stay-blind": 112,
+    "see": 50
+   }
+  },
+  "llama3.2_3b_ft_shuffled": {
+   "all": {
+    "chaal": 548,
+    "pack": 468,
+    "show": 456,
+    "raise": 366,
+    "stay-blind": 111,
+    "see": 51
+   },
+   "conversion": {
+    "stay-blind": 111,
+    "see": 51
+   }
+  }
+ },
+ "adapter": {
+  "adapter_dir": "/content/drive/MyDrive/teenpattibench_finetune/llama3.2_3b_full/best_adapter",
+  "adapter_weights_sha256": "d07beee5e5ada96bcad65b9f6ebaf44f420dea9a472e819c0ffeba69a5ac9096",
+  "base_model": "meta-llama/Llama-3.2-3B-Instruct",
+  "lora": {
+   "r": 16,
+   "alpha": 32,
+   "dropout": 0.05,
+   "targets": [
+    "down_proj",
+    "gate_proj",
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "up_proj",
+    "v_proj"
+   ]
+  },
+  "best_step": 1250,
+  "val_acc": 0.9644644644644644,
+  "val_balanced_acc": 0.9360076012579213,
+  "train_mode": "full",
+  "train_seed": 20260929,
+  "finetune_file_sha256": "aeea7b5a395345b1f5c02697082892a3f273d2b86c0ed441d0a3271aab1e5c11",
+  "benchmark_eval_used_in_training": false,
+  "trained_with": {
+   "gpu": "NVIDIA A100-SXM4-40GB",
+   "torch": "2.11.0+cu128",
+   "cuda": "12.8",
+   "transformers": "5.16.1",
+   "peft": "0.21.1",
+   "python": "3.13.15"
+  }
+ },
+ "leak_check": {
+  "ran": false
+ },
+ "prompt": {
+  "date_string": "26 Jul 2024",
+  "system_prompt_file": "/content/teenpattibench_system_prompt.txt"
+ }
+}

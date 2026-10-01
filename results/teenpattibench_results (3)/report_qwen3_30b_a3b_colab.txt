@@ -1,0 +1,41 @@
+=== TeenPattiBench ===
+graded items      : 1800
+Action Accuracy   :  29.06%
+Exact Match       :  29.06%
+
+--- blind vs seen ---
+  blind  n=300    AA= 49.67%  EM= 49.67%
+  seen   n=1500   AA= 24.93%  EM= 24.93%
+
+--- conversion timing, by the actor's own turn ---
+    (Phase 2 solver: P(look) = 0.000035, 0.786, 0.058, 0.931)
+  turn 1  n=4     AA= 75.00%
+  turn 2  n=19    AA= 68.42%
+  turn 3  n=53    AA= 50.94%
+  turn 4  n=86    AA= 19.77%
+
+--- blind betting, by the actor's own turn ---
+  turn 1  n=4     AA= 50.00%
+  turn 2  n=17    AA= 29.41%
+  turn 3  n=41    AA= 46.34%
+  turn 4  n=76    AA= 82.89%
+
+--- by family ---
+  blind_bet  n=138    AA= 64.49%
+  look       n=162    AA= 37.04%
+  seen_bet   n=1500   AA= 24.93%
+
+--- by seat ---
+  seat 1   n=692    AA= 40.32%
+  seat 2   n=1108   AA= 22.02%
+
+--- mixed (non-dominant) subset, distribution distance ---
+  items=200  scored=0 (no distributions supplied)
+
+--- trivial baselines (must all be low) ---
+  always-chaal        25.94%
+  always-pack         20.83%
+  always-raise        21.56%
+  always-see           3.33%
+  always-show         22.67%
+  always-stay-blind    5.67%

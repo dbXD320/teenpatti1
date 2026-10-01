@@ -1,0 +1,73 @@
+{
+ "baselines": {
+  "all": 25.944444444444443,
+  "seen": 25.0,
+  "conversion": 62.96296296296296,
+  "blind_bet": 66.66666666666667
+ },
+ "rows": [
+  {
+   "model": "Gemma 4 E2B",
+   "eval": "v1",
+   "dtype": "torch.bfloat16",
+   "aa_all": 31.56,
+   "aa_seen": 27.33,
+   "aa_conversion": 64.81,
+   "aa_blind_bet": 38.41,
+   "conv_turn1": 75.0,
+   "conv_turn2": 57.89,
+   "conv_turn3": 49.06,
+   "conv_turn4": 75.58,
+   "folded_system": false
+  },
+  {
+   "model": "Gemma 4 E2B",
+   "eval": "shuffled",
+   "dtype": "torch.bfloat16",
+   "aa_all": 30.72,
+   "aa_seen": 26.0,
+   "aa_conversion": 67.28,
+   "aa_blind_bet": 39.13,
+   "conv_turn1": 75.0,
+   "conv_turn2": 63.16,
+   "conv_turn3": 66.04,
+   "conv_turn4": 68.6,
+   "folded_system": false
+  },
+  {
+   "model": "Gemma 4 E2B",
+   "eval": "shuffled - v1",
+   "aa_all": -0.83,
+   "fixed_by_shuffle": 111,
+   "broken_by_shuffle": 126,
+   "same_answer_pct": 77.0
+  }
+ ],
+ "answer_distributions": {
+  "gemma4_e2b_v1": {
+   "raise": 506,
+   "pack": 493,
+   "chaal": 451,
+   "show": 387,
+   "stay-blind": 131,
+   "see": 31,
+   "call": 1
+  },
+  "gemma4_e2b_shuffled": {
+   "chaal": 630,
+   "raise": 448,
+   "pack": 442,
+   "show": 316,
+   "stay-blind": 107,
+   "see": 55,
+   "fold": 2
+  }
+ },
+ "plan": [
+  {
+   "model": "Gemma 4 E2B",
+   "id": "google/gemma-4-E2B-it",
+   "status": "run"
+  }
+ ]
+}

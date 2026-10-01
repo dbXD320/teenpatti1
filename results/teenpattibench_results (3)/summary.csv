@@ -1,0 +1,4 @@
+eval,model,aa_all,aa_blind_bet,aa_conversion,aa_seen,broken_by_shuffle,conv_turn1,conv_turn2,conv_turn3,conv_turn4,dtype,fixed_by_shuffle,folded_system,same_answer_pct
+v1,Gemma 4 E2B,31.56,38.41,64.81,27.33,,75.0,57.89,49.06,75.58,torch.bfloat16,,False,
+shuffled,Gemma 4 E2B,30.72,39.13,67.28,26.0,,75.0,63.16,66.04,68.6,torch.bfloat16,,False,
+shuffled - v1,Gemma 4 E2B,-0.83,,,,126,,,,,,111,,77.0

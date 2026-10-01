@@ -330,7 +330,21 @@ def rebalance(records, labels, rng, cap=None):
 # --------------------------------------------------------------------------
 
 def template(records, solver, hands_by_class, rng, split):
-    """Render each record into a benchmark item. Raises on anything unrenderable."""
+    """Render each record into a benchmark item. Raises on anything unrenderable.
+
+    Three optional record keys extend the output without changing the default:
+
+      * ``action_order`` -- a permutation of the node's legal Actions, passed to
+        ``render_prompt`` so the menu is presented in that order. The item's
+        ``legal_actions`` then lists the displayed order and
+        ``meta.action_order`` records it. Presentation only: the correct action
+        and its amount are properties of the state and are unaffected.
+      * ``extra_meta`` -- a dict merged into ``meta`` (component, group id, ...).
+      * ``weight`` -- emitted as a top-level ``weight`` field.
+
+    A record with none of these renders byte-identically to before, so the
+    shipped eval and training files remain reproducible from this function.
+    """
     tree = solver.tree
     out = []
     for r in records:
@@ -346,7 +360,8 @@ def template(records, solver, hands_by_class, rng, split):
             hand_idx = members[rng.randrange(len(members))]
             hand = HANDS[hand_idx]
             hand_str = " ".join(P.spell_card(c) for c in hand)
-        prompt = P.render_prompt(st, hand=hand)
+        order = r.get("action_order")
+        prompt = P.render_prompt(st, hand=hand, action_order=order)
 
         action = tree.actions[r["node"]][r["actions"].index(r["label"])]
         item = {
@@ -380,6 +395,16 @@ def template(records, solver, hands_by_class, rng, split):
                 "repeat_index": r.get("repeat_index", 0),
             },
         }
+        # Optional extensions. Added only when present so that the default item
+        # -- including its JSON key order -- is exactly what it was before.
+        if order is not None:
+            displayed = [ACTION_NAMES[a] for a in order]
+            item["legal_actions"] = displayed
+            item["meta"]["action_order"] = displayed
+        if r.get("extra_meta"):
+            item["meta"].update(r["extra_meta"])
+        if "weight" in r:
+            item["weight"] = r["weight"]
         out.append(item)
     return out
 

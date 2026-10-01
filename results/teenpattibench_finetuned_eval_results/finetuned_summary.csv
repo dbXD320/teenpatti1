@@ -1,0 +1,5 @@
+eval,model,slug,aa_all,aa_blind_bet,aa_conversion,aa_seen,blind_fold_pct,conv_turn1,conv_turn1_n,conv_turn2,conv_turn2_n,conv_turn3,conv_turn3_n,conv_turn4,conv_turn4_n
+v1,"base, training prompt",llama3.2_3b_base_ftprompt,27.28,40.58,37.04,25.0,49.28,75.0,4,68.42,19,50.94,53,19.77,86
+shuffled,"base, training prompt",llama3.2_3b_base_ftprompt,26.94,20.29,37.04,26.47,75.36,75.0,4,68.42,19,50.94,53,19.77,86
+v1,FINE-TUNED,llama3.2_3b_ft,89.22,92.75,80.25,89.87,0.0,25.0,4,89.47,19,77.36,53,82.56,86
+shuffled,FINE-TUNED,llama3.2_3b_ft,89.83,90.58,80.86,90.73,0.0,25.0,4,94.74,19,75.47,53,83.72,86

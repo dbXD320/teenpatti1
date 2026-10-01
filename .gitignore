@@ -26,3 +26,7 @@ runs/
 # solution_default.pkl; the stats sidecar is small but kept with its data file.
 data/teenpattibench_train_100k*.jsonl
 data/teenpattibench_train_100k*_stats.json
+# Fine-tuning dataset from generate_finetune.py (182 MB, over GitHub's 100 MB
+# limit). Regenerates deterministically in ~12 s. Its stats sidecar is small and
+# IS committed, as the record of the composition.
+data/teenpattibench_finetune.jsonl
